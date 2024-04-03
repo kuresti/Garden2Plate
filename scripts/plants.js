@@ -8,10 +8,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
     //Event listener added to searchButton to trigger fetchPerenual()
     searchButton.addEventListener("click", () => {
-        plantAPIInteractions.fetchPerenual();
-        
+        try {
+            plantAPIInteractions.processPlantData();
+            
+      
+         } catch (error) {
+            console.error("An error occurred: ", error);
+         }
+        });
     });
-});
+        
 
 const plantAPIInteractions = new APIInteractions();
-
