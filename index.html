@@ -15,6 +15,8 @@
 <link rel="stylesheet" href="styles/normalize.css">
 <link rel="stylesheet" href="styles/medium.css">
 <link rel="stylesheet" href="styles/large.css">
+<script src="scripts/APIInteractions.mjs" type="module"></script>
+<script src="scripts/plants.js" type="module"></script>
 
 
 
@@ -72,10 +74,16 @@
             </div>
             <div class="zone">
             <h2>What would you like to grow in your garden?</h2>
-            <p>Enter a plant name </p>
+            
             <p>Plant Name: &nbsp;<input type="text" id="pName" placeholder="Plant name"></p>
             <button id="searchButton">Search</button>
-            <div class="plantInfo"></div>
+            <div class="plantInfo">
+                <output id="plantList">
+                    <ul id="plantItems">
+                        <!--List of buttons will be dynamically added here-->
+                    </ul>
+                </output>
+            </div>
             </div>
         </main>
 
