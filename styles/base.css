@@ -7,6 +7,7 @@
   --font-color-on-color: whitesmoke;
   --text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.3);
   --box-shadow: rgba(50, 50, 93, 0.25) 0px, 50px 100px -20px;
+  --border: rgb(35, 34, 34);
   --primary-color: --#4CAF50;
   --accent1: #795548;
   --accent2: #FF5722;
@@ -32,31 +33,56 @@ h5,
 h6 {
   font-family: var(--heading-font);
 }
+p {
+  font-size: 1.5rem;
+}
+html {
+  box-sizing: border-box;
+}
 
 /*Styling of the Header */
-header {
+ .header {
   display: flex;
-  grid-template-columns: repeat(2, 1fr);
-  background-color: var(--accent4);  
-}
-
-header h1 {
-  font-size: 1.25rem;
-  font-weight: 500;
-  padding: 0.5rem;
-  text-align: center;
-}
-
-/*style logo at the base view */
-.headerlogo {
+  flex-direction: column;
+  align-items: center;
   width: 100%;
-  text-align: center;
+  height: 100%;
+  object-fit: cover;
 }
-.headerlogo picture {
-  width: 100;
-  display: flex;
-  justify-content: center;
+
+
+.header-title {
+  background-color: #4CAF50;
+  margin-top: .50rem;
+  margin-bottom: .50rem;
+  padding: 1rem;
 }
+
+.header-title h1 {
+  font-family: var(--card-title-font);
+  color: rgb(243, 231, 231);
+  text-shadow: 3px 3px 0px rgba(0, 0, 0, 0.2);
+  font-size: 1.75rem;
+  font-weight: 500;
+  padding: 0;
+  text-align: left;
+}
+
+/*Hero Image styling*/
+.hero-container {
+ width: 100%;
+ height: 100%;
+ object-fit: cover;
+}
+
+.hero-container img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+
+
 
 /* Hamburger button */
 .hambtn {
@@ -171,36 +197,48 @@ nav ul li {
   
 }
 
-
-
-
-
-
-
-
 /* main .home-page */
 .home-page {
   display: flex;
   flex-direction: column;
-  
+  justify-content: center;
+  align-items: center;  
 }
 
-/* Hero Image */
-
-#hero {
-  position: relative;
+.plant h2 {
+  font-size: 2rem;
 }
 
-.hero-img img {
-  object-fit: cover;
-  width: 100%;
-  height: 100%;
+/*style user interaction*/
+#pName {
+  height: 1.75rem;
+  width: 25%;
+  border: .1rem solid var(--border);
+  border-radius: .4rem;
 }
-.hero-img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+
+#search-button,
+#clear-button {
+  height: 2.5rem;
+  width: 20%;
+  padding: .6rem;
+  border: .1rem solid var(--border);
+  border-radius: .4rem;
+  background-color: var(--accent6);
+  color: var(--font-color-on-color);
+  font-weight: 600;
 }
+#search-button {
+  margin-right: .5rem;
+}
+
+#clear-button {  
+  margin-left: .5rem;
+}
+
+
+
+
 
 
 

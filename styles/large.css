@@ -1,4 +1,8 @@
 /* 64em is also 1028px when basefont is 16px */
 @media only screen and (min-width: 64em) {
     /*--Header large view */
+    header h1 {
+        font-family: var(--card-title-font);
+        font-size: 6rem;      
+      }
 }

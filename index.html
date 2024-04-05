@@ -6,6 +6,8 @@
     <meta name="author" content="Kimberly Uresti" />
     <meta name="description" content="Home page GardeningZone2Plate" />
     <title>GardeningZone2Plate</title>
+    <link rel="icon" type="image/x-icon" href="favicon_io/favicon.ico" />
+    <link />
 
     <!--Links-->
 
@@ -24,20 +26,16 @@
     <script src="scripts/plants.js" type="module"></script>
   </head>
   <body>
-    <!--Header with logo and responsive navigation-->
-    <header>
-      <div class="header-logo">
-        <picture>
-          <img
-            src="images/smGardeningZone2Zone.png"
-            alt="gardenzone2plate logo"
-            width="100"
-            height="100"
-          />
-        </picture>
-      </div>
+    <!--Header-->
+    <div class="header-container">
+    <header>  
+    <div class="header-title">   
       <h1>Gardening 2 Plate</h1>
-
+    </div> 
+    <div class="hero-container">
+      <img src="images/vegetables-on-table-small.jpg" alt="Variety of garden vegetable on a table">
+     </div> 
+    </div>
       <!--Hamburger Button-->
       <!-- <div class="hambtn">
             <div class="button" id="nav-icon">
@@ -59,21 +57,8 @@
         </nav>-->
     </header>
     <main class="home-page">
-      <!-- <div id="hero">
-                <picture class="hero-img">
-                    <source
-                        media="(min-width: 1028px)"
-                        srcset="images/vegetables-on-table-large.jpg">
-                    <source
-                        media="(min-width: 564px)"
-                        srcset="images/vegetables-on-table-medium.jpg">
-                    <source
-                        media="(min-width: 390px)"
-                        srcset="images/vegetables-on-table-small.jpg">
-                    <img src="images/vegetables-on-table-large.jpg" alt="Vegetables on the table. Image by rorozoa on Freepik">
-                </picture>
-            </div>-->
-      <div class="zone">
+     
+      <div class="plant">
         <h2>What would you like to grow in your garden?</h2>
         <h3 class="notFoundMessage" id="clearNotFound"></h3>
         <p>
@@ -81,10 +66,12 @@
             type="text"
             id="pName"
             placeholder="Plant name"
+            required
           />
         </p>
-        <button id="searchButton">Search</button>
-        <button id="clearInput">Clear Input</button>
+        <button id="search-button">Search</button>
+        <button id="clear-button">Clear</button>
+        </div>
         <div class="plantInfo">
           <output id="plantList">
             <ul id="plantItems">

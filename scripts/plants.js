@@ -27,7 +27,7 @@ const outputButtons = new OutputButtons(dataSource, element);
 
 //Event listener on the DOM to ensure the page is loaded before getUserInput is called
 document.addEventListener("DOMContentLoaded", () => {
-    const searchButton = document.getElementById("searchButton");
+    const searchButton = document.getElementById("search-button");
 
     //Event listener added to searchButton to trigger fetchPerenual()
     searchButton.addEventListener("click", async () => {
@@ -76,7 +76,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
     //Event listener added to Clear Input button
     const inputField = document.getElementById("pName");
-    setEventListener("#clearInput", inputField, (inputField) => {
+    setEventListener("#clear-button", inputField, (inputField) => {
+        //clear any not found messages
+        document.querySelector("#clearNotFound").innerText = "";
         //clear search
         inputField.value = "";
     });
