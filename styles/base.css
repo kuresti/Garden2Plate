@@ -21,7 +21,7 @@
 body {
   font-family: var(--paragraph-font);
   max-width: 100%;
-  overflow: hidden;
+ 
 }
 h1,
 h2,

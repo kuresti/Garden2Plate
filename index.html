@@ -1,44 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="author" content="Kimberly Uresti">
-    <meta name="description" content="Home page GardeningZone2Plate">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Kimberly Uresti" />
+    <meta name="description" content="Home page GardeningZone2Plate" />
     <title>GardeningZone2Plate</title>
 
     <!--Links-->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Pacifico&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles/base.css">
-<link rel="stylesheet" href="styles/normalize.css">
-<link rel="stylesheet" href="styles/medium.css">
-<link rel="stylesheet" href="styles/large.css">
-<script src="scripts/APIInteractions.mjs" type="module"></script>
-<script src="scripts/plants.js" type="module"></script>
 
-
-
-
-</head>
-<body>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="shortcut" href="favicon_io/favicon.ico" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Pacifico&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles/base.css" />
+    <link rel="stylesheet" href="styles/normalize.css" />
+    <link rel="stylesheet" href="styles/medium.css" />
+    <link rel="stylesheet" href="styles/large.css" />
+    <script src="scripts/APIInteractions.mjs" type="module"></script>
+    <script src="scripts/plants.js" type="module"></script>
+  </head>
+  <body>
     <!--Header with logo and responsive navigation-->
     <header>
-        <div class="header-logo">
-            <picture>
-                <img 
-                    src="images/smGardeningZone2Zone.png"
-                    alt="gardenzone2plate logo"
-                    width="100"
-                    height="100">
-            </picture>
-        </div>
-        <h1>Gardening 2 Plate</h1>
+      <div class="header-logo">
+        <picture>
+          <img
+            src="images/smGardeningZone2Zone.png"
+            alt="gardenzone2plate logo"
+            width="100"
+            height="100"
+          />
+        </picture>
+      </div>
+      <h1>Gardening 2 Plate</h1>
 
-        
-        <!--Hamburger Button-->
-        <div class="hambtn">
+      <!--Hamburger Button-->
+      <!-- <div class="hambtn">
             <div class="button" id="nav-icon">
                 <span></span>
                 <span></span>
@@ -46,8 +47,8 @@
                 <span></span>
             </div>
        
-       <!--Nav bar with responsive hamburger menu-->
-       <nav class="primarynav">
+       Nav bar with responsive hamburger menu-->
+      <!-- <nav class="primarynav">
             <ul >
                 <li class="active hover-color">
                     <a href="index.html">Home</a>
@@ -55,10 +56,10 @@
                 <li class="hover-color">#</li>
                 <li class="hover-color">#</li>
             </ul>
-        </nav>
+        </nav>-->
     </header>
-        <main class="home-page">
-            <div id="hero">
+    <main class="home-page">
+      <!-- <div id="hero">
                 <picture class="hero-img">
                     <source
                         media="(min-width: 1028px)"
@@ -71,24 +72,27 @@
                         srcset="images/vegetables-on-table-small.jpg">
                     <img src="images/vegetables-on-table-large.jpg" alt="Vegetables on the table. Image by rorozoa on Freepik">
                 </picture>
-            </div>
-            <div class="zone">
-            <h2>What would you like to grow in your garden?</h2>
-            
-            <p>Plant Name: &nbsp;<input type="text" id="pName" placeholder="Plant name"></p>
-            <button id="searchButton">Search</button>
-            <div class="plantInfo">
-                <output id="plantList">
-                    <ul id="plantItems">
-                        <!--List of buttons will be dynamically added here-->
-                    </ul>
-                </output>
-            </div>
-            </div>
-        </main>
-
-        
-    
-    
-</body>
+            </div>-->
+      <div class="zone">
+        <h2>What would you like to grow in your garden?</h2>
+        <h3 class="notFoundMessage" id="clearNotFound"></h3>
+        <p>
+          Plant Name: &nbsp;<input
+            type="text"
+            id="pName"
+            placeholder="Plant name"
+          />
+        </p>
+        <button id="searchButton">Search</button>
+        <button id="clearInput">Clear Input</button>
+        <div class="plantInfo">
+          <output id="plantList">
+            <ul id="plantItems">
+              <!--List of buttons will be dynamically added here-->
+            </ul>
+          </output>
+        </div>
+      </div>
+    </main>
+  </body>
 </html>

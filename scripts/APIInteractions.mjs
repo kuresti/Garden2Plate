@@ -1,6 +1,10 @@
 //This module handles interactions with APIs
 
-//Waits for the response from the API then converts it to JSON
+
+
+//Import Calls
+
+//Waits for the response from the API then converts it to JSON Obj
 async function convertToJson(response) {
     const data = await response.json()
     if (response.ok) {
@@ -21,76 +25,74 @@ async function convertTextToJson(response) {
 }
 
 
-
+//APIInteractions handles fetches to APIs
   export default class APIInteractions {
         constructor(userInputPlants, userInputRecipes) {
             this.userInputPlants = userInputPlants;
             this.userInputRecipes = userInputRecipes;
 
             //URLs for API fetches defined
-            this.plantBaseUrl = "https://perenual.com/api/species-list?key=sk-VvDh65ff36478eff84705";
-            //this.detailsUrl = `https://perenual.com/api/species/details/${plantId}?key=sk-VvDh65ff36478eff84705`            
+            this.plantBaseUrl = "https://perenual.com/api/species-list?key=sk-VvDh65ff36478eff84705&edible=1&q=";
+            this.detailsBaseUrl = `https://perenual.com/api/species/details/`;  
+            this.plantKey = `?key=sk-VvDh65ff36478eff84705`;          
         }
 
         //fetch plantList
         async fetchPlantData() {
-            this.userInputPlants = document.getElementById("pName").value.toLowerCase();
-            const url = `${this.plantBaseUrl}&edible=1&q=${this.userInputPlants}`;
-            console.log(this.userInputPlants);
-            const plantResponse = await fetch(url);
-            const data = await convertTextToJson(plantResponse);
-            const plantArray = Object.entries(data);
+            try {
+                //Get userInput to search API                
+                this.userInputPlants = document.getElementById("pName").value.toLowerCase();
+                //Constructing URL
+                const url = `${this.plantBaseUrl}${this.userInputPlants}`;
+                //Test log
+                //console.log(this.userInputPlants);
+                //response from fetch
+                const plantResponse = await fetch(url);
+                //Returned data converted from Text to Json
+                const data = await convertTextToJson(plantResponse);
+                // //Json data converted to javascript object
+                // const plantArray = Object.entries(data);
+
+                //Flatten the nested arrays to process further
+                //const flatData = data.flatMap(arr => arr[1]);
+
+
+            //Test Function 
             // if (Array.isArray(plantArray)) {
             //     console.log("plantArray is an array: ", plantArray);
             // } else {
             //     console.log("plantArray is not an array: ", typeof plantArray);
             // }
             //console.log(data);
-            return plantArray;
-        }
-
-        async processPlantData() {
-           try{ 
-            const returnedArrays = await this.fetchPlantData();
-
-            //Flatten the nested arrays to process further
-            const flatData = returnedArrays.flatMap(arr => arr[1]);
-
-            //Take flatData and create an array of extracted obj.common_name properties
-            const objWithCommon_Name = flatData.filter(obj => obj.hasOwnProperty("common_name"));
-            //console.log(objWithCommon_Name);
+            return data;
             
-            //Create empty array to hold uniquePlantNameObj
-            const uniqueCommon_Name = [];
+        } catch (error) {
+            console.error(error);
 
-            //Iterate through the plantItems list to create a uniqueItems list
-            objWithCommon_Name.forEach((plant) => {
-               //check to see if common_name is unique
-               const existingItem = uniqueCommon_Name.find( (item) => {
-                   return item.common_name === plant.common_name
-               });
-               if (!existingItem) {
-                   uniqueCommon_Name.push(plant);
-               }
-               
-            });
-            console.log(uniqueCommon_Name);
-            return uniqueCommon_Name;
-            } catch (error) {
-            console.error("An error occurred while processing data: ", error);
+            return "An error ocurred while fetching plant data. Please try again later."
+            }
         }
-                
-
-            //     // const detailsResponse = await fetch(this.detailsUrl);
-            //     // const detailsResult = await convertTextToJson(detailsResponse);
-            //     // console.log(detailsResult);
-            // } catch (error) {
-            //     console.error(error);
-            // }
-
         
         
+
+        //fetch plantDetails
+        async fetchPlantDetails(id) {
+            //Construct URL
+            const url = `${this.detailsBaseUrl}${id}${this.plantKey}`
+            //Fetch and await response
+            const detailResponse = await fetch(url);
+            //Convert response to Json
+            const dataDetails = await convertTextToJson(detailResponse);
+            // //Convert Json array into a javascript obj
+            // const detailArray = Object.entries(data);
+            //Flatten nested arrays
+            //const flatDetailArray = detailArray.flatMap(arr => arr[1]);
+            return dataDetails;
         }
+
+      
+
+        
         // async fetchSpoonacular() {
     }    //     const url = 'https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/findByIngredients?ingredients=basil%2C%20tomato%2C%20carrot&number=3&ignorePantry=true&ranking=1';
         //     const options = {
@@ -109,6 +111,7 @@ async function convertTextToJson(response) {
 	    //         console.error(error);
         //     }
         // }
-  
+
+        
 
 
