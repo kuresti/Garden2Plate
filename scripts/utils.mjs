@@ -20,7 +20,7 @@ export function renderListWithTemplate(templateFn, parentElement, list, list2, p
 
 //set a listener for both touchend and click
 export function setEventListener(selector, inputField, callback) {
-    document.querySelector(selector).addEventListener("touchendd", (event) => {
+    document.querySelector(selector).addEventListener("touchend", (event) => {
         event.preventDefault();
         callback(inputField)
     });
@@ -38,4 +38,5 @@ export function getLocalStorage(key) {
 export function setLocalStorage(key, data) {
     localStorage.setItem(key, JSON.stringify(data));
 }
+
 

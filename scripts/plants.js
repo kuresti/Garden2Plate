@@ -19,7 +19,7 @@ const dataSource = {};
 //returns the list of randomGardenPics
 const randomDataSource = {};
 //Get the element to render the list in
-const element = document.querySelector("#plantItems");
+const element = document.querySelector("#plant-items");
 //Create an instance of OutputButtons class and send it the parameters it needs
 const outputCards = new OutputCards(dataSource, element, randomDataSource);
 
@@ -88,5 +88,12 @@ document.addEventListener("DOMContentLoaded", () => {
         //clear search
         inputField.value = "";
     });
+
+    
+
+    //Event listener added to prevent default behavior of 
+    //front card button
+    
+
         
 

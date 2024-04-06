@@ -20,6 +20,7 @@
 
 /*Overall body fonts*/
 body {
+  position: absolute;
   font-family: var(--paragraph-font);
   max-width: 100%;
  
@@ -85,7 +86,7 @@ html {
 
 
 /* Hamburger button */
-.hambtn {
+/*.hambtn {
   height: 100%;
   padding: 0;
   margin: 0;
@@ -106,7 +107,7 @@ html {
 }
 
 /* Hambtn lines*/
-.button span {
+/*.button span {
   display: block;
   position: absolute;
   height: 3px;
@@ -119,7 +120,7 @@ html {
 }
 
 /* Hambtn -> Close button transition */
-#nav-icon span:nth-child(1) {
+/*#nav-icon span:nth-child(1) {
   top: 0;
 }
 
@@ -153,7 +154,7 @@ html {
 }
 
 /* Navigation style */
-nav {
+/*nav {
   position: relative;
 }
 
@@ -195,7 +196,7 @@ nav ul li {
   margin: 0;
   padding: 10px;
   
-}
+}*/
 
 /* main .home-page */
 .home-page {
@@ -207,14 +208,21 @@ nav ul li {
 
 .plant h2 {
   font-size: 2rem;
+  padding: 1rem;
 }
 
 /*style user interaction*/
 #pName {
   height: 1.75rem;
-  width: 25%;
+  width: 45%;
+  font-size: 1.5rem;
   border: .1rem solid var(--border);
   border-radius: .4rem;
+  padding: 1rem;
+}
+
+.notFoundMessage {
+  padding: 1rem;
 }
 
 #search-button,
@@ -227,6 +235,8 @@ nav ul li {
   background-color: var(--accent6);
   color: var(--font-color-on-color);
   font-weight: 600;
+  margin-bottom: 1.5rem;
+  margin-top: 1rem;
 }
 #search-button {
   margin-right: .5rem;
@@ -236,7 +246,7 @@ nav ul li {
   margin-left: .5rem;
 }
 
-/*Flip Card styling*/
+     /*Flip Card styling*/
 /* CSS reset*/
 *,
 *::after,
@@ -251,6 +261,10 @@ nav ul li {
 /* Headings */
 
 /* Main heading for card's front cover */
+.inside-page__heading {
+  padding-bottom: 1rem;
+  width: 100%;
+}
 /*For both inside page's heading and the Title on card front*/
 .card-front__text-title,
 .inside-page__heading {
@@ -266,17 +280,17 @@ nav ul li {
 
 /*Front cover*/
 .card-front__tp {
-  color: var(--font-color-on-color);
+  color: #fafbfa;
 }
 
 /*Back cover*/
 .inside-page__text {
-  color: var(--main-font-color);
+  color: #333;
 }
 
 /* Icons styling */
 .card-front__icon {
-  fill: var(--accent1);
+  fill: #fafbfa;
   font-size: 3vw;
   height: 3.25rem;
   margin-top: -.5rem;
@@ -336,25 +350,25 @@ input[type="checkbox"] {
 }*/
 
 /* Layout structure */
-.home-page {
+.plant-info {
+  position: relative;
+  box-sizing: border-box;
   background:linear-gradient(to bottom right,
   #eee8dd,
   #e3d9c6);
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  height: 100vh;
+  justify-content: space-evenly;
+  height: 100%;
   width: 100%;
+  align-items: center;
+  flex-wrap: nowrap;
+  padding: 1.5rem;
 }
 
 /* Container to hold all cards in one place */
 .card-area {
-  align-items: center;
-  display: flex;
-  flex-wrap: nowrap;
   height: 100%;
-  justify-content: space-evenly;
-  padding: 1rem;
 }
 
 /* Card styling */
@@ -372,10 +386,12 @@ inside page*/
 .card {
   background-color: rgba(0, 0, 0, .05);
   box-shadow: -.1rem 1.7rem 6.6rem -3.2rem rgba(0, 0, 0, 0.5);
-  height: 35rem;
+  height: 15rem;
   position: relative;
   transition: all 1s ease;
-  width: 35rem;
+  width: 15rem;
+  margin-bottom: 3rem;
+  margin-top: 1rem;
 }
 
 /*Flip care - covering boththe front and inside front page */
@@ -383,13 +399,13 @@ inside page*/
 /*An outer container to hold the flip card. This excludes
 the inside page */
 .flip-card {
-  height: 35rem;
+  height: 15rem;
   perspective: 100rem;
   position: absolute;
   right: 0;
   transition: all 1s ease;
   visibility: hidden;
-  width: 35rem;
+  width: 15rem;
   z-index: 100;
 }
 
@@ -407,7 +423,7 @@ the inside page */
   height: 100%;
   position: absolute;
   right: 0;
-  transform-origin: left;
+  transform-origin: top;
   transform-style: preserve-3d;
   transition: all 1s ease;
   width: 100%;
@@ -428,8 +444,8 @@ the inside page */
 /*Container for the front side */
 .card-front {
   background-color: #fafbfa;
-  height: 35rem;
-  width: 35rem;
+  height: 15rem;
+  width: 15rem;
 }
 
 /* Front side's top section */
@@ -460,10 +476,10 @@ the inside page */
 
 .card-back {
   background-color: #fafbfa;
-  transform: rotate(180deg);
+  transform: rotateY(180deg);
 }
 
-.picture__container {
+.picture_container {
   clip-path: polygon(0% 0%, 100% 0%, 90% 50%, 100% 100%, 0% 100%);
   height: auto;
   min-height: 100%;
@@ -480,7 +496,7 @@ the inside page */
   position: absolute;
   right: 0;
   transition: all 1s ease;
-  width: 35rem;
+  width: 15rem;
   z-index: 1;
 }
 
@@ -500,11 +516,14 @@ the inside page */
   width: 30rem;
 }
 
-/* When the card is hovered, the shadow on the inside page will shrink to the left */
-.card:hover .inside-page {
-  box-shadow: rgba(0, 0, 0, 0.1);
+.card:hover .flip-card__container {
+  transform: rotateX(-180deg);
 }
 
+/* When the card is hovered, the shadow on the inside page will shrink to the left */
+.card:hover .inside-page {
+  box-shadow: inset 1rem 0px 5rem -2.5rem rgba(0, 0, 0, 0.1);
+}
 
 
 
