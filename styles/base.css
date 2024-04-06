@@ -236,6 +236,24 @@ nav ul li {
   margin-left: .5rem;
 }
 
+/*Flip Card styling*/
+/* CSS reset*/
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+/* Typography */
+
+/* Headings */
+
+/* Main heading for card's front cover */
+
+
+
 
 
 

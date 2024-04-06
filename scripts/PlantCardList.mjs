@@ -5,7 +5,7 @@ import { renderListWithTemplate } from "./utils.mjs";
 
 
 //output button template function
-function outputCardTemplate(plant) {
+function outputCardTemplate(plant, pic) {
     
     
     return `<li class="card" id="card-list"><button class="card-button">${plant.common_name}</button>
@@ -75,9 +75,10 @@ export default class OutputCards {
         this.renderList(list);
     }
 
-    renderList(plant) {
+    renderList(plant, pic) {
         renderListWithTemplate(outputCardTemplate, this.listElement, plant, pic);
         console.log(plant);
+        console.log(pic);
         }
 
     }

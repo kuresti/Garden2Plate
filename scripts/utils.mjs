@@ -7,14 +7,15 @@
 
 
 
-export function renderListWithTemplate(templateFn, parentElement, list, position = "afterbegin", clear = false) {
+export function renderListWithTemplate(templateFn, parentElement, list, list2, position = "afterbegin", clear = false) {
     const htmlStrings = list.map(templateFn);
+    const htmlStrings2 = list2.map(templateFn);
 
     //if clear is true the contents of the parent need to be cleared out
     if (clear) {
         parentElement.innerHTML = "";
     }
-    parentElement.insertAdjacentHTML(position, htmlStrings.join(""));
+    parentElement.insertAdjacentHTML(position, htmlStrings.join(""), htmlStrings2.join(""));
 }
 
 //set a listener for both touchend and click

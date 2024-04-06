@@ -25,8 +25,8 @@ export default class RandomPics {
 
             //removes a pic from the list so that it won't be repeated
             gardenPics.splice(index, 1);
-
-
+            
         }
+        return randomGardenPics;
     }    
 }
