@@ -3,8 +3,9 @@
 //Imports
 import { renderListWithTemplate } from "./utils.mjs";
 
+
 //output button template function
-function outputButtonTemplate(plant) {
+function outputCardTemplate(plant) {
     
     
     return `<li class="card" id="card-list"><button class="card-button">${plant.common_name}</button>
@@ -22,36 +23,60 @@ function outputButtonTemplate(plant) {
                                     </div>
                                   </div>
                                   <div class="card-back">
-                                <picture class="picture_container">
+                                <div class="picture_container">
+                              <img
+                               srcset=${pic.large_one}, 
+                                      ${pic.large_two}, 
+                                      ${pic.medium_one},
+                                      ${pic.medium_two},
+                                      ${pic.small_one},
+                                      ${pic.small_two}
+                               src=${pic.large_one}
+                               alt=${pic.name}/>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="indside-page">
+                           <div class="inside-page__container>
 
-                <h3 class="card-summary">Plant Info</h3>
-                <p class="card-summary">Description: ${plant.description}</p>
-                <p class="card-summary">Dimension: ${plant.dimension}</p>
-                <p class="card-summary">Propogation: ${plant.propogation}</p>
-                <p class="card-summary">Water Needs: ${plant.watering}</p> <p class="card-summary">Sunlight needs: ${plant.sunlight}</p>
-                <p class="card-summary">Pruning Month: ${plant.pruning_month}</p>
-                <p class="card-summary">Growth Rate: ${plant.growth_rate}</p>
-                <p class="card-summary">Harvest Season: ${plant.harvest_season}</p>
-                <p class="card-summary">Flower Coler: ${plant.flower_color}</p>
+                <h3 class="inside-page__heading">Plant Info</h3>
+                <p class="inside-page__text">Description: ${plant.description}</p>
+                <p class="inside-page__text">Dimension: ${plant.dimension}</p>
+                <p class="inside-page__text">Propogation: ${plant.propogation}</p>
+                <p class="inside-page__text">Water Needs: ${plant.watering}</p> <p class="card-summary">Sunlight needs: ${plant.sunlight}</p>
+                <p class="inside-page__text">Pruning Month: ${plant.pruning_month}</p>
+                <p class="inside-page__text">Growth Rate: ${plant.growth_rate}</p>
+                <p class="inside-page__text">Harvest Season: ${plant.harvest_season}</p>
+                <p class="inside-page__text">Flower Coler: ${plant.flower_color}</p>
+                <label class="inside-page__add-fav">
+                    <input type="checkbox" />
+                        <i class="inside-page__icon-heart">
+                        <i class="inside-page__icon-plus-sign"></i>
+                        </i>
+                </label>
                 </li>`
                 
 }
 
 
-export default class OutputButtons {
-    constructor(dataSource, listElement) {
+export default class OutputCards {
+    constructor(dataSource, listElement, randomDataSource) {
             this.dataSource = dataSource;
             this.listElement = listElement;
             this.plant = {};
+            this.randomDataSource = randomDataSource;
+            this.pic = {};
     }
 
     async init() {
         this.plant = await this.dataSource;
+        this.pic = await this.randomDataSource;
         this.renderList(list);
     }
 
     renderList(plant) {
-        renderListWithTemplate(outputButtonTemplate, this.listElement, plant);
+        renderListWithTemplate(outputCardTemplate, this.listElement, plant, pic);
         console.log(plant);
         }
 

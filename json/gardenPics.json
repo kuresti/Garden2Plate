@@ -1,39 +1,67 @@
-{
-    "pictures":
+ {
+ "garden_pics":[
     {
         "name": "Orange flowers",
-        "large_one": "images/orange-flowers-lg-one.jpg",
-        "large_two": "images/orange-flowers-lg-two.jpg",
-        "medium_one": "images/orange-flowers-md-one.jpg",
-        "medium_two": "images/orange-flowers-md-one.jpg",
-        "small_one": "images/orange-flowers-sm-one.jpg",
-        "small_two": "images/orange-flowers-sm-two.jpg"
+        "large_one": "images/orange-flowers-lg-one-1920w.jpg",
+        "large_two": "images/orange-flowers-lg-two-1600w.jpg",
+        "medium_one": "images/orange-flowers-md-one-1366w.jpg",
+        "medium_two": "images/orange-flowers-md-one-1366w.jpg",
+        "small_one": "images/orange-flowers-sm-one-768w.jpg",
+        "small_two": "images/orange-flowers-sm-two-640w.jpg"
     },
     {
         "name": "Seedlings",
-        "large_one": "images/seedlings-lg-one.jpg",
-        "large_two": "images/seedlings-lg-two.jpg",
-        "medium_one": "images/seedlings-md-one.jpg",
-        "medium_two": "images/seedlings-md-two.jpg",
-        "small_one": "images/seedlings-sm-one.jpg",
-        "small_two": "images/seedlings-sm-two.jpg"
+        "large_one": "images/seedlings-lg-one-1920w.jpg",
+        "large_two": "images/seedlings-lg-two-1600w.jpg",
+        "medium_one": "images/seedlings-md-one-1366w.jpg",
+        "medium_two": "images/seedlings-md-two-1024w.jpg",
+        "small_one": "images/seedlings-sm-one-768w.jpg",
+        "small_two": "images/seedlings-sm-two-640w.jpg"
     },
     {
         "name": "Yellow zucchini flowers",
-        "large_one": "images/yellow-zucchini-flower-lg-one.jpg",
-        "large_two": "images/yellow-zucchini-flower-lg-two.jpg",
-        "medium_one": "images/yellow-zucchini-flower-md-one.jpg",
-        "medium_two": "images/yellow-zucchini-flower-md-2.jpg",
-        "small_one": "images/yellow-zucchini-flower-sm-one.jpg",
-        "small_two": "images/yellow-zucchini-flower-sm-two.jpg"   
-    }
+        "large_one": "images/yellow-zucchini-flower-lg-one-1920w.jpg",
+        "large_two": "images/yellow-zucchini-flower-lg-two-1600w.jpg",
+        "medium_one": "images/yellow-zucchini-flower-md-one-1366w.jpg",
+        "medium_two": "images/yellow-zucchini-flower-md-two-1024w.jpg",
+        "small_one": "images/yellow-zucchini-flower-sm-one-768w.jpg",
+        "small_two": "images/yellow-zucchini-flower-sm-two-640w.jpg"   
+    },
     {
         "name": "Red rose",
-        "large_one": "images/red-rose-large-one.jpg",
-        "large_two": "images/red-rose-large-two.jpg",
-        "medium_one": "images/red-rose-md-one.jpg",
-        "medium_two": "images/red-rose-md-two.jpg",
-        "small_one": "images/red-rose-sm-one.jpg",
-        "small_two": "images/red-rose-sm-one.jpg"  
+        "large_one": "images/red-rose-large-one-1920w.jpg",
+        "large_two": "images/red-rose-large-two-1600w.jpg",
+        "medium_one": "images/red-rose-md-one-1366w.jpg",
+        "medium_two": "images/red-rose-md-two-1024w.jpg",
+        "small_one": "images/red-rose-sm-one-768w.jpg",
+        "small_two": "images/red-rose-sm-one-640w.jpg"  
+    },
+    {
+        "name": "Veggie basket",
+        "large_one": "images/vegetables-basket-sunlight-fotor-20240405204222-large-one-1920w.jpg",
+        "large_two": "images/vegetables-basket-sunlight-fotor-20240405204330-large-two-1600w.jpg",
+        "medium_one": "images/vegetables-basket-sunlight-fotor-2024040520445-med-one-1366w.jpg",
+        "medium_two": "images/vegetables-basket-sunlight-fotor-20240405204437-med-two-1024w.jpg",
+        "small_one": "images/vegetables-basket-sunlight-fotor-20240405204515-small-one-768w.jpg",
+        "small_two": "images/vegetables-basket-sunlight-fotor-20240405204553-small-two-640w.jpg"  
+    },
+    {
+        "name": "Vegetable Garden",
+        "large_one": "images/composition-fresh-vegetables-blurred-vegetable-garden-background-fotor-20240405205448-large-one-1920w.jpg",
+        "large_two": "images/composition-fresh-vegetables-blurred-vegetable-garden-background-fotor-20240405205529-large-two-1600w.jpg",
+        "medium_one": "images/composition-fresh-vegetables-blurred-vegetable-garden-background-fotor-20240405205622-med-one-1366w.jpg",
+        "medium_two": "images/composition-fresh-vegetables-blurred-vegetable-garden-background-fotor-20240405205655-md-two-1024w.jpg",
+        "small_one": "images/composition-fresh-vegetables-blurred-vegetable-garden-background-fotor-20240405205731-sm-one-768w.jpg",
+        "small_two": "images/composition-fresh-vegetables-blurred-vegetable-garden-background-fotor-2024040520582-sm-two-640w.jpg"
+    },
+    {
+        "name": "Hand holding basket",
+        "large_one": "images/close-up-hand-holding-basket-fotor-2024040521311-large-one-1920w.jpg",
+        "large_two": "images/close-up-hand-holding-basket-fotor-2024040521343-large-two-1600w.jpg",
+        "medium_one": "images/close-up-hand-holding-basket-fotor-2024040521412-med-one-1366w.jpg",
+        "medium_two": "images/close-up-hand-holding-basket-fotor-2024040521441-med-two-1024w.jpg",
+        "small_one": "images/close-up-hand-holding-basket-fotor-202404052158-sm-one-768w.jpg",
+        "small_two": "images/close-up-hand-holding-basket-fotor-2024040521535-sm-two-640w.jpg"
     }
-}
+]
+ }
