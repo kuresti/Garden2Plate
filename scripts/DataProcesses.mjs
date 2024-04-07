@@ -118,12 +118,35 @@ export default class DataProcesses {
             const detailsPromise = await apiInteractions.fetchPlantDetails(id);
             detailsPromises.push(detailsPromise);                
         }
+            
+
 
         //Wait for all fetch calls to resolve
         const plantDetails = await Promise.all(detailsPromises);
         //console.log(plantDetails);
         //Use .flatMap to extract values from array
         //const plantInfo = plantDetails.flatMap(this.extractValues.bind(this));
+
+        // //Add an eventlistener to the img tag
+        // const promises = plantDetails.map(img =>  new Promise(response =>
+        //     img.onload = () => response ([img.width, img.height])
+        //     ))
+
+        // //list all image widths and heights _after_ the images have loaded:
+        // Promise.all(promises).then(data => {
+        //     console.log("The images have loaded")
+        //     console.log(data);
+        // })
+
+        // plantDetails.forEach(item => {
+        //     const img = new Image();
+        //     img.src = item.default_image.original_url;
+        //     img.onload = () => {
+                
+        //         console.log("Image has loaded", img.src);
+        //     };
+            
+        // });
 
         //console.log(plantInfo);
         return plantDetails;

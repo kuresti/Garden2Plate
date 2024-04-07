@@ -5,7 +5,7 @@ import DataProcesses from "./DataProcesses.mjs";
 import OutputCards from "./PlantCardList.mjs";
 import APIInteractions from "./APIInteractions.mjs";
 import { setEventListener } from "./utils.mjs";
-import RandomPics from "./RandomPics.mjs";
+//import RandomPics from "./RandomPics.mjs";
 
 //constructors
 //Create instance of APIInteractions
@@ -13,15 +13,15 @@ const apiInteractions = new APIInteractions();
 //1st instance of DataProcesses
 const dataProcesses = new DataProcesses();
 //returns an array of random garden pics
-const randomPics = new RandomPics();
+//const randomPics = new RandomPics();
 //returns the list of plantNames
 const dataSource = {};
 //returns the list of randomGardenPics
-const randomDataSource = {};
+//const randomDataSource = {};
 //Get the element to render the list in
 const element = document.querySelector("#plant-items");
 //Create an instance of OutputButtons class and send it the parameters it needs
-const outputCards = new OutputCards(dataSource, element, randomDataSource);
+const outputCards = new OutputCards(dataSource, element);
 
 
 
@@ -63,11 +63,13 @@ document.addEventListener("DOMContentLoaded", () => {
                 //outputButtons.init();
 
                 //Create randomGardenPics array
-                const randomDataSource = await randomPics.getGardenPics();
+                //const randomDataSource = await randomPics.getGardenPics();
 
                 // Create the output buttons with the plantNames
                 //ToDo handle cases when a plant is not found
-                outputCards.renderList(dataSource, randomDataSource);   
+                outputCards.renderList(dataSource);
+                  
+                console.log(dataSource); 
                 }
 
                 
