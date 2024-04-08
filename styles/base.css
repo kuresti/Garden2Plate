@@ -83,121 +83,6 @@ html {
 }
 
 
-
-
-/* Hamburger button */
-/*.hambtn {
-  height: 100%;
-  padding: 0;
-  margin: 0;
-  align-self: end;
-
-}
-
-#nav-icon {
-  width: 30px;
-  height: 15px;
-  margin-top: 5px;
-  margin-left: 25px;
-  margin-right: 25px;
-  margin-bottom: 25px;
-  transform: rotate(0deg);
-  transition: all .5s ease;
-  cursor: pointer;
-}
-
-/* Hambtn lines*/
-/*.button span {
-  display: block;
-  position: absolute;
-  height: 3px;
-  width: 100%;
-  background-color: var(--accent6);
-  border-radius: 15px;
-  opacity: 1;
-  left:0;
-  transition: all .5s ease;
-}
-
-/* Hambtn -> Close button transition */
-/*#nav-icon span:nth-child(1) {
-  top: 0;
-}
-
-#nav-icon span:nth-child(2),
-#nav-icon span:nth-child(3) {
-  top: 50%;
-}
-
-#nav-icon span:nth-child(4) {
-  top: 100%;
-}
-
-#nav-icon.open span:nth-child(1),
-#nav-icon.open span:nth-child(4) {
-  transform: rotateY(360deg) scale3d(0, 0, 0);
-  opacity: 0;
-}
-
-#nav-icon.open span:nth-child(2) {
-  transform: rotateZ(45deg) rotateX(360deg);
-  background-color: var(--accent5);
-  width: 80%;
-  left: 10%;
-}
-
-#nav-icon.open span:nth-child(3) {
-  transform: rotateZ(-45deg) rotate(360deg);
-  background-color: var(--accent5);
-  width: 80%;
-  left: 10%;
-}
-
-/* Navigation style */
-/*nav {
-  position: relative;
-}
-
-#nav-icon {
-  position:absolute;
-  right: 5px;
-  top: 70px;
-  font-size: 1em;
-  z-index: 2;
-}
-
-.inverse {
-  color: white;
-}
-
-.primarynav {
-  position: absolute;
-  right: -300px;
-  width: 300px;
-  height: 25%;
-  background-color: var(--accent6);
-  z-index: 1;
-  transition: 400ms ease;
-}
-
-nav.open {
-  height: 100%;
-  transform: translateX(-300px);
-}
-
-nav ul {
-  list-style: none;
-  padding: 50px 10px;
-  text-align: center;
-  overflow: hidden;
-}
-
-nav ul li {
-  margin: 0;
-  padding: 10px;
-  
-}*/
-
 /* main .home-page */
 .home-page {
   display: flex;
@@ -246,7 +131,8 @@ nav ul li {
   margin-left: .5rem;
 }
 
-     /*Flip Card styling*/
+    
+ /*Flip Card styling*/
 /* CSS reset*/
 *,
 *::after,
@@ -292,16 +178,17 @@ svg {
 /*front button styling*/
 h2#card-front__text-title {
   color: var(--main-font-color);
-  font-family: var(--card-title-font);
+  font-family: var(--heading-font);
+  font-size: 100%;
 }
 
 button.card-front-button {
-  height: 2.5rem;
+  height: 2.75rem;
   border-radius: .4rem;
   border: .1rem solid var(--border);
   background-color: var(--accent7);
   color: var(--font-color-on-color);
-  width: 75%;
+  width: 100%;
   
 }
 
@@ -324,55 +211,6 @@ button.card-front-button {
 
 /* Favorite Button styles */
 
-/*.inside-page__add-fav {
-  display: inline-block;
-  padding: 1rem;
-  cursor: pointer;
-  border: .1rem solid var(--border);
-  background: -webkit-linear-gradient(top,#fff,#ddd) #ddd;
-  position: relative;
-  transition: all .5s ease;
-  border-radius: .4rem;
-  box-shadow: inset 0 -.1rem .1rem #eee; 
-  z-index: 10;
-}
-
-&:hover {
-  background: -webkit-linear-gradient(top,#fff,#ccc) #ddd;
-}
-
-.inside-page__icon-heart {
-  font-size: 2rem;
-  color: #666;
-  position: relative;
-  transition: all .5s ease-in-out;
-  z-index: 10;
-}
-
-.inside-page__icon-plus-sign {
-  font-size: 1rem;
-  color: #333;
-  background: #fff;
-  border-radius: 100%;
-  position: absolute;
-  bottom: .1rem;
-  right: .1rem;
-  height: .5rem;
-  width: .5rem;
-  line-height: .5rem;
-  text-align: center;
-  transition: all 1s ease-in-out;
-}
-input[type="checkbox"] {
-  position: absolute;
-  opacity: 0;
-  &:checked + .icon-heart {
-    color: orange;
-    .icon-plus-sign {
-      color: green;
-    }
-  }
-}*/
 
 /* Layout structure */
 .plant-info {
@@ -382,7 +220,7 @@ input[type="checkbox"] {
   #eee8dd,
   #e3d9c6);
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: space-evenly;
   height: 100%;
   width: 100%;
@@ -417,6 +255,7 @@ inside page*/
   width: 18rem;
   margin-bottom: 3rem;
   margin-top: 1rem;
+  list-style-type: none;
 }
 
 /*Flip care - covering boththe front and inside front page */
@@ -458,7 +297,7 @@ the inside page */
 .card-back {
   backface-visibility: hidden;
   height: 100%;
-  left: 0;
+  right: 0;
   position: absolute;
   top: 0;
   width: 100%;
@@ -555,7 +394,9 @@ h2.inside-page__container  {
 /* When the card is hovered, the shadow on the inside page will shrink to the left */
 .card:hover .inside-page {
   box-shadow: inset 1rem 0px 5rem -2.5rem rgba(0, 0, 0, 0.1);
+  transform: translateY(-2em);
 }
+
 
 
 
