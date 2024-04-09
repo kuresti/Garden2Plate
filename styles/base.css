@@ -92,8 +92,9 @@ p {
   box-shadow: var(--box-shadow);
 }
 
-
+/*main attributions style*/
 /* main .home-page */
+.main-attributions,
 .home-page {
   background: linear-gradient(to bottom right, #eee8dd, #e3d9c6);
   background-size: cover;
@@ -286,9 +287,48 @@ footer {
   text-align: center;
 }
 
+/*styling Attributions page*/
+
+.main-attributions {
+
+}
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*Cards that wern't responsive
+I still wanted them on my github because 
+the effects are fun*/
 /* Flip over card styling */
 /*.plant-card-container {
   display: grid;  
