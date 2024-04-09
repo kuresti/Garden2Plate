@@ -126,7 +126,7 @@ export default class DataProcesses {
         //console.log(plantDetails);
         //Use .flatMap to extract values from array
         //const plantInfo = plantDetails.flatMap(this.extractValues.bind(this));
-
+            console.log(plantDetails);
         // //Add an eventlistener to the img tag
         // const promises = plantDetails.map(img =>  new Promise(response =>
         //     img.onload = () => response ([img.width, img.height])

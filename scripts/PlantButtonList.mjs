@@ -88,13 +88,15 @@ export default class PlantButtonList {
             button.addEventListener("click", async () => {
                 //Get common_name from button dataset data-info
                 const commonName = button.dataset.info;
+                console.log(commonName);
+                console.log(plant);
+                const plantData = [plant.find(item => item.common_name === commonName)];
+                console.log(plantData);
+                if (plantData) {
                 
                 
-                const plantData = plant.find(plant => plant.common_name === commonName);
-    
-                if (plantData){
                 
-                await this.renderPlantCard(plant);
+                await this.renderPlantCard(plantData);
                 }
                 
             });

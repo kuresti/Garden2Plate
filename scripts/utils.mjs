@@ -20,6 +20,7 @@ export function renderNoImageListWithTemplate(templateFn, parentElement, list, p
 }
 
 export async function renderImagesListWithTemplate(templateFn, parentElement, list, position="afterbegin", clear=false) {
+    console.log(list);
     try {
     //Create promises for loading images
     const promises = list.map(item => new Promise(resolve => {
@@ -32,6 +33,7 @@ export async function renderImagesListWithTemplate(templateFn, parentElement, li
     await Promise.all(promises);
     //Generate HTML strings
     const htmlStrings = list.map(templateFn);
+
     //const htmlStrings2 = list.map(templateFn);
     console.log(htmlStrings);
     //Clear parent element if needed
