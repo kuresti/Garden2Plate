@@ -4,285 +4,44 @@
     body {
         max-width: 100%;
     }
-    header h1 {
-        font-family: var(--card-title-font);
-        font-size: 6rem;      
-      }
+    h1,
+    h2,
+    h3,
+    h4,
+    h4,
+    h5,
+    h6 {
+      font-family: var(--heading-font);
+      font-size: 32px;
+    }
+    p {
+      font-size: 20px;
+    }
 
-     /*Flip Card styling*/
-/* CSS reset*/
-*,
-*::after,
-*::before {
-  box-sizing: inherit;
-  margin: 0;
-  padding: 0;
-}
+    #search-button {
+      margin-left: 17.5rem;
+    }
+    
+    #clear-button {  
+      margin-left: 1rem;
+    }
 
-/* Typography */
+    .plant-button {
+      font-size: 1.65rem;
+    }
+    .card {
+      margin: 2.25rem;
+      width: 21rem;
+      height: 27rem;
+    }
 
-/* Headings */
-
-/* Main heading for card's front cover */
-.inside-page__heading {
-  padding-bottom: 1rem;
-  width: 100%;
-}
-
-svg {
-  width: 5rem;
-  height: 5rem;
-}
-/*For both inside page's heading and the Title on card front*/
-.card-front__text-title,
-.inside-page__heading {
-  font-size: .75rem;
-  font-weight: 500;
-  margin-top: .2rem;
-}
-
-.inside-page__heading,
-.card-front__text-title {
-  color: var(--primary-color);
-  font-size: 1rem;
-}
-
-/*Front cover*/
-.card-front__tp {
-  color: #fafbfa;
-}
-
-/*front button styling*/
-h2#card-front__text-title {
-  color: var(--main-font-color);
-  font-family: var(--heading-font);
-  font-size: 100%;
-}
-
-button.card-front-button {
-  height: 2.75rem;
-  border-radius: .4rem;
-  border: .1rem solid var(--border);
-  background-color: var(--accent7);
-  color: var(--font-color-on-color);
-  width: 100%;
-  
-}
-
-/*Back cover*/
-.inside-page__text {
-  color: #333;
-}
-
-/* Icons styling */
-.card-front__icon {
-  fill: #fafbfa;
-  font-size: 3vw;
-  height: 3.25rem;
-  margin-top: -.5rem;
-  width: 3.25rem;
-  height: 100%;
-  width: 100%;
-  transform: rotateX(180deg);
-}
-
-/* Favorite Button styles */
-
-
-/* Layout structure */
-.plant-info {
-  position: relative;
-  box-sizing: border-box;
-  background:linear-gradient(to bottom right,
-  #eee8dd,
-  #e3d9c6);
-  display: grid;
-  grid-column: 1fr;
-  grid-row: auto;
-  justify-content: space-evenly;
-  height: 100%;
-  width: 100%;
-  align-items: center;
-  flex-wrap: nowrap;
-  padding: 1.5rem;
-}
-
-/* Container to hold all cards in one place */
-.card-area {
-  height: 100%;
-  display: grid;
-  grid-column: 1fr;
-  grid-row: qu;
-}
-
-/* Card styling */
-/* Area to hold an individual card */
-.card-section {
-  align-items: center;
-  display: grid;
-  grid-column: 1fr;
-  grid-row: auto;
-  height: 100%;
-  justify-content: center;
-  width: 100%;
-}
-
-/* A container to hold the flip card and the 
-inside page*/
-.card {
-  background-color: rgba(0, 0, 0, .05);
-  box-shadow: -.1rem 1.7rem 6.6rem -3.2rem rgba(0, 0, 0, 0.5);
-  height: 18rem;
-  position: relative;
-  transition: all 1s ease;
-  width: 100%;
-  margin-bottom: 3rem;
-  margin-top: 1rem;
-  list-style-type: none;
-}
-
-/*Flip care - covering boththe front and inside front page */
-
-/*An outer container to hold the flip card. This excludes
-the inside page */
-.flip-card {
-  height: 18rem;
-  perspective: 100rem;
-  position: absolute;
-  right: 0;
-  transition: all 1s ease;
-  visibility: hidden;
-  width: 18rem;
-  z-index: 100;
-}
-
-/*The outer container's visibility is set to hidden.
-This is to make everything within the container NOT set
-to hidden */
-/* This is done so content in the inside page can be selected */
-.flip-card > * {
-  visibility: visible;
-}
-
-/* An inner container to hold the flip card. This excludes
-the inside page */
-.flip-card__container {
-  height: 100%;
-  position: absolute;
-  right: 0;
-  transform-origin: top;
-  transform-style: preserve-3d;
-  transition: all 1s ease;
-  width: 100%;
-}
-
-.card-front,
-.card-back {
-  backface-visibility: hidden;
-  height: 100%;
-  right: 0;
-  position: absolute;
-  top: 0;
-  width: 100%;
-}
-
-/* Styling for the front side of the flip card */
-
-/*Container for the front side */
-.card-front {
-  background-color: #fafbfa;
-  height: 18rem;
-  width: 18rem;
-}
-
-/* Front side's top section */
-.card-front__tp {
-  align-items: center;
-  clip-path: polygon(0 0, 100% 0, 100% 90%, 57% 90%, 50% 100%, 43% 90%, 0 90%);
-  display: flex;
-  flex-direction: column;
-  height: 15rem;
-  justify-content: center;
-  padding: .75rem;
-}
-
-/* Front card's bottom section */
-.card-front__bt {
-  align-items: center;
-  display: flex;
-  justify-content: center;
-}
-
-/*Styling for the back side of the flip card */
-
-.card-back {
-  background-color: #fafbfa;
-  transform: rotateY(180deg);
-}
-
-.picture_container {
-  clip-path: polygon(0% 0%, 100% 0%, 90% 50%, 100% 100%, 0% 100%);
-  height: auto;
-  min-height: 100%;
-  object-fit: cover;
-  width: 100%;
-}
-
-/* Inside Page */
-.inside-page {
-  background-color: #fafbfa;
-  box-shadow: inset 20rem 0px 5rem - 2.5rem rgba(0, 0, 0, 0.25);
-  height: 100%;
-  padding: 1rem;
-  position: absolute;
-  right: 0;
-  transition: all 1s ease;
-  width: 18rem;
-  z-index: 1;
-}
-
-.inside-page__container {
-  
-  display: grid;
-  grid-column: 1fr;
-  grid-row: auto;
-  text-align: left;
-  height: 100%;
-  width: 100%;
-  padding: 1rem;
-  
-}
-
-h2.inside-page__container  {
-  font-family: var(--heading-font);
-  font-size: 1rem;
-  text-align: left;
-}
-
-.inside-page__text {
-  font-size: .95rem;
-  padding: .1rem;
-  
-}
-
-/* Functionality */
-/* This is to keep the card centered (within its container) when opened */
-.card:hover {
-  box-shadow: -1rem 1.7rem 6.6rem -3.2rem rgba(0, 0, 0, 0.75);
-  width: 30rem;
-}
-
-.card:hover .flip-card__container {
-  transform: rotateX(-180deg);
-}
-
-/* When the card is hovered, the shadow on the inside page will shrink to the left */
-.card:hover .inside-page {
-  box-shadow: inset 1rem 0px 5rem -2.5rem rgba(0, 0, 0, 0.1);
-  transform: translateY(-2em);
-}
-
-
+    .card-slide {
+      font-size: 1.2rem; 
+      height: 30rem;
+      width: 21rem;
+    }
+    
+     
  
 
 }
