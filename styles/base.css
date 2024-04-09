@@ -23,6 +23,7 @@ body {
   position: absolute;
   font-family: var(--paragraph-font);
   max-width: 100%;
+  position: relative;
  
 }
 h1,
@@ -85,6 +86,7 @@ html {
 
 /* main .home-page */
 .home-page {
+  background: linear-gradient(to bottom right, #eee8dd, #e3d9c6);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -213,15 +215,20 @@ button.card-front-button {
 
 
 /* Layout structure */
-.plant-info {
-  position: relative;
-  box-sizing: border-box;
-  background:linear-gradient(to bottom right,
-  #eee8dd,
-  #e3d9c6);
+.outside-plant-card-container {
+  
   display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
+  flex-direction: column;
+  justify-content: center;
+  height: 100vh;
+  width: 100%;
+  box-sizing: border-box;
+}
+.plant-info {
+  position: relative;  
+  display: grid;
+  grid-column: 1fr;
+  grid-row: auto;
   height: 100%;
   width: 100%;
   align-items: center;
@@ -298,7 +305,7 @@ the inside page */
   backface-visibility: hidden;
   height: 100%;
   right: 0;
-  position: absolute;
+  
   top: 0;
   width: 100%;
 }
@@ -346,7 +353,7 @@ the inside page */
 }
 
 /* Inside Page */
-.inside-page {
+/*.inside-page {
   background-color: #fafbfa;
   box-shadow: inset 20rem 0px 5rem - 2.5rem rgba(0, 0, 0, 0.25);
   height: 100%;
@@ -356,7 +363,7 @@ the inside page */
   transition: all 1s ease;
   width: 18rem;
   z-index: 1;
-}
+}*/
 
 .inside-page__container {
   word-wrap: break-word;
@@ -366,7 +373,6 @@ the inside page */
   height: 100%;
   width: 100%;
   padding: 1rem;
-  overflow: hidden;
 }
 
 h2.inside-page__container  {

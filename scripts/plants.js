@@ -2,9 +2,9 @@
 
 //Import calls
 import DataProcesses from "./DataProcesses.mjs";
-import OutputCards from "./PlantCardList.mjs";
 import APIInteractions from "./APIInteractions.mjs";
-import { setEventListener } from "./utils.mjs";
+import { setEventListener } from "./utils.mjs"
+import PlantButtonList from "./PlantButtonList.mjs";
 //import RandomPics from "./RandomPics.mjs";
 
 //constructors
@@ -12,18 +12,16 @@ import { setEventListener } from "./utils.mjs";
 const apiInteractions = new APIInteractions();
 //1st instance of DataProcesses
 const dataProcesses = new DataProcesses();
-//returns an array of random garden pics
-//const randomPics = new RandomPics();
-//returns the list of plantNames
+//const dataSource
 const dataSource = {};
-//returns the list of randomGardenPics
-//const randomDataSource = {};
-//Get the element to render the list in
-const element = document.querySelector("#plant-items");
-//Create an instance of OutputButtons class and send it the parameters it needs
-const outputCards = new OutputCards(dataSource, element);
-
-
+//Get cardElement to render cards
+const cardElement = document.querySelector(".plant-card-container");
+//Get buttonElement to render buttons
+const buttonElement = document.querySelector("#plant-buttons");
+//Create an instance of PlantButtonList and send parameters needed
+const plantButtonList = new PlantButtonList(dataSource, buttonElement);
+//Create 2nd instance of PlantButtonList
+const plantCardList = new PlantButtonList(dataSource, cardElement);
 
 
 
@@ -60,27 +58,28 @@ document.addEventListener("DOMContentLoaded", () => {
 
                 //Create details array
                 const dataSource = await dataProcesses.createDetailsArray();
-                //outputButtons.init();
+                console.log(dataProcesses.createDetailsArray());
+                //Create list of plan buttons
+                await plantButtonList.init();
+                plantButtonList.renderPlantButtonList(dataSource, buttonElement);
 
-                //Create randomGardenPics array
-                //const randomDataSource = await randomPics.getGardenPics();
+                //Set event Listeners on the rendered buttons
+                plantCardList.buttonFunctionality(dataSource, cardElement);
+                
 
                 // Create the output buttons with the plantNames
                 //ToDo handle cases when a plant is not found
-                outputCards.renderList(dataSource);
-                  
-                console.log(dataSource); 
-                }
-
-                
-                
-      
+                //ToDO call button list
+                // plantButtonList.renderPlantButtonList();  
+                // console.log(dataSource); 
+                 }   
          } catch (error) {
             console.error("An error occurred: ", error);
             document.querySelector(".notFoundMessage").innerText = "Plant not found. Please try again.";
          }
         });
-    });
+});
+
 
     //Event listener added to Clear Input button
     const inputField = document.getElementById("pName");

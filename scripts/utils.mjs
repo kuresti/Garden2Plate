@@ -7,19 +7,19 @@
 
 
 
-// export function renderListWithTemplate(templateFn, parentElement, list, list2, position = "afterbegin", clear = false) {
-//     const htmlStrings = list.map(templateFn);
-//     const htmlStrings2 = list2.map(templateFn); 
+export function renderNoImageListWithTemplate(templateFn, parentElement, list, position = "afterbegin", clear = false) {
+    const htmlStrings = list.map(templateFn);
+    
 
     
-//     //if clear is true the contents of the parent need to be cleared out
-//     if (clear) {
-//         parentElement.innerHTML = "";
-//     }
-//     parentElement.insertAdjacentHTML(position, htmlStrings.join(""), htmlStrings2.join(""));
-// }
+    //if clear is true the contents of the parent need to be cleared out
+    if (clear) {
+        parentElement.innerHTML = "";
+    }
+    parentElement.insertAdjacentHTML(position, htmlStrings.join(""));
+}
 
-export async function renderListWithTemplate(templateFn, parentElement, list, position="afterbegin", clear=false) {
+export async function renderImagesListWithTemplate(templateFn, parentElement, list, position="afterbegin", clear=false) {
     try {
     //Create promises for loading images
     const promises = list.map(item => new Promise(resolve => {
@@ -48,6 +48,7 @@ export async function renderListWithTemplate(templateFn, parentElement, list, po
 }
 
 
+
 //set a listener for both touchend and click
 export function setEventListener(selector, inputField, callback) {
     document.querySelector(selector).addEventListener("touchend", (event) => {
@@ -69,4 +70,5 @@ export function setLocalStorage(key, data) {
     localStorage.setItem(key, JSON.stringify(data));
 }
 
+ 
 
