@@ -3,9 +3,8 @@
 //Import calls
 import DataProcesses from "./DataProcesses.mjs";
 import APIInteractions from "./APIInteractions.mjs";
-import { setEventListener } from "./utils.mjs";
+import { getLocalStorage, setEventListener } from "./utils.mjs";
 import PlantButtonList from "./PlantButtonList.mjs";
-//import RandomPics from "./RandomPics.mjs";
 
 //constructors
 //Create instance of APIInteractions
@@ -48,13 +47,9 @@ document.addEventListener("DOMContentLoaded", () => {
         document.querySelector(".notFoundMessage").innerText =
           "Plant not found. Please try again.";
       } else {
-        //If userInput matches fetched data
-        //Get plantNames for button text
-        // const plantNames = await dataProcesses.getPlantNames();
-
         //Create details array
         const dataSource = await dataProcesses.createDetailsArray();
-        console.log(dataProcesses.createDetailsArray());
+
         //Create list of plan buttons
         await plantButtonList.init();
         plantButtonList.renderPlantButtonList(dataSource, buttonElement);
@@ -77,7 +72,18 @@ setEventListener("#clear-button", inputField, (inputField) => {
   document.querySelector("#clearNotFound").innerText = "";
   //clear search
   inputField.value = "";
+
+  document.querySelector(".card").innerHTML = "";
+  document.querySelector("#plant-buttons").innerHTML = "";
 });
 
-//Event listener added to prevent default behavior of
-//front card button
+function addFavoritesEventListener() {
+  document.getElementById("favorite-plants").addEventListener("click", () => {
+    console.log("click");
+    const list = getLocalStorage("so-fav");
+    console.log("list");
+    console.log(list);
+    plantButtonList.renderPlantButtonList(list, buttonElement);
+  });
+}
+addFavoritesEventListener();

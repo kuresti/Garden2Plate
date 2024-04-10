@@ -4,6 +4,8 @@
 import {
   renderNoImageListWithTemplate,
   renderImagesListWithTemplate,
+  setLocalStorage,
+  getLocalStorage,
 } from "./utils.mjs";
 
 // const dataSource = {};
@@ -17,7 +19,7 @@ function createPlantButtonsTemplate(plant) {
 }
 
 //Plant card template
-function createPlantCard(plant) {
+export function createPlantCard(plant) {
   return `<div class="card"> 
              <h2 class="card-title">${plant.common_name}</h2>            
                <img class="card-images" src="${plant.default_image.original_url}"
@@ -54,9 +56,7 @@ export default class PlantButtonList {
 
   async init() {
     this.plant = await this.dataSource;
-
-    document.querySelector("#favorites");
-    //.addEventListener("change", this.addToFav.bind(this));
+    console.log(this.plant);
 
     //this.renderPlantButtonList(this.plant);
   }
@@ -98,6 +98,7 @@ export default class PlantButtonList {
       "afterbegin",
       true
     );
+    this.favEventListener(plant);
     console.log(plant);
   }
 
@@ -105,24 +106,20 @@ export default class PlantButtonList {
     await this.plantButtonSetEventListener(plant);
   }
 
-  //   favAddEventListener() {
-  //     document.addEventListener("#favorites", () => {
-  //       const favPlants = getLocalStorage("so-fav") || [];
-  //       const plantIndex = favPlants(
-  //         (plant) => plant.common_name === this.plant.common_name
-  //       );
+  favEventListener(plant) {
+    document.querySelector("#favorites").addEventListener("change", () => {
+      const favPlant = plant[0];
 
-  //       //If the plant is alread in the cart
-  //       if (plantIndex !== -1) {
-  //         //Show dialog to the user
-  //         const userConfirm = confirm(
-  //           "You have this item in your favorites list already."
-  //         );
-  //       } else {
-  //         //If plant is not in the fav list, add it to the list
-  //         favPlants.push(this.plant);
-  //         alertMessage(`${this.plant.common_name} has been added you your list.`);
-  //       }
-  //     });
-  //   }
+      this.addToFav(favPlant);
+    });
+  }
+
+  addToFav(favPlant) {
+    const favPlants = getLocalStorage("so-fav") || [];
+    //If plant is not in the fav list, add it to the list
+    favPlants.push(favPlant);
+    console.log(favPlant);
+    setLocalStorage("so-fav", favPlants);
+    alertMessage(`${favPlant.common_name} has been added you your list.`);
+  }
 }
