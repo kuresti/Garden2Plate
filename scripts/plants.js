@@ -84,6 +84,7 @@ function addFavoritesEventListener() {
     console.log("list");
     console.log(list);
     plantButtonList.renderPlantButtonList(list, buttonElement);
+    plantCardList.buttonFunctionality(list, cardElement);
   });
 }
 addFavoritesEventListener();

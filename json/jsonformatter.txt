@@ -1,0 +1,7 @@
+Parse error on line 11:
+...o.jpg"
+    },
+    {
+        "name": "
+---------------------^
+Expecting 'STRING', got '{'

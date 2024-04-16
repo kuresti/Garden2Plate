@@ -203,7 +203,6 @@ p {
   justify-content: center;
   align-items: center;
   background: #e3d9c6;
-  box-shadow: var(--box-shadow);
 }
 
 .card {

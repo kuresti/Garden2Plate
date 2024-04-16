@@ -99,7 +99,6 @@ export default class PlantButtonList {
       true
     );
     this.favEventListener(plant);
-    console.log(plant);
   }
 
   async buttonFunctionality(plant) {
