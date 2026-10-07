@@ -1,6 +1,6 @@
 import { loadHeaderFooter } from "./utils.mjs";
 
-loadHeaderFooter();
+await loadHeaderFooter();
 
 function getCopyrightYear() {
     return document.querySelector(".copyright-year").textContent = new Date().getFullYear();
@@ -8,14 +8,3 @@ function getCopyrightYear() {
 
 getCopyrightYear();
 
-
-
-orderDate();
-
-function lastModified() {
-    return document.querySelector(
-    ".last-modified"
-    ).textContent = new Date(document.lastModified);
-}
-
-lastModified();

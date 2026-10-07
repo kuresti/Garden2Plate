@@ -1,14 +1,18 @@
 
 
 function getCopyrightYear() {
-    return document.querySelector(".copyright-year").textContent = new Date().getFullYear();
+    const copyrightYear = document.querySelector(".copyright-year");
+
+    if (copyrightYear) {
+         copyrightYear.textContent = new Date().getFullYear();
+    }   
 }
 
 getCopyrightYear();
 
 
 
-orderDate();
+// orderDate();
 
 function lastModified() {
     return document.querySelector(
