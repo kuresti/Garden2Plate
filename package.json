@@ -1,0 +1,25 @@
+{
+  "name": "garden2plate",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Garden2Plate is a web application that helps users search for edible plants, explore detailed growing information, and save plants they are interested in growing.",
+  "main": "footer.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kuresti/Garden2Plate.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kuresti/Garden2Plate/issues"
+  },
+  "homepage": "https://github.com/kuresti/Garden2Plate#readme",
+  "dependencies": {
+    "express": "^5.2.1",
+    "Express": "^3.0.1"
+  }
+}
